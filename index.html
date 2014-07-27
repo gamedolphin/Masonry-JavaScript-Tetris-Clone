@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Masonry - Game Dolphin</title>
+	<script src="phaser.min.js"></script>
+	<script src="load.js"></script>
+	<script src="mainMenu.js"></script>
+	<script src="block.js"></script>
+	<script src="game.js"></script>
+</head>
+<body style:"margin:0px auto;">
+
+<div id="gameContainer" style:"margin:0px auto;"></div>
+
+<script type="text/javascript">
+
+/* Made by Nambiar - Game Dolphin 
+
+Feel free to use and learn from */
+	var w = 400, h = 600;
+
+window.onload = function() {
+
+var gamevar = new Phaser.Game(w,h,Phaser.AUTO,'gameContainer');
+
+gamevar.state.add('Load',Game.Load);
+
+gamevar.state.add('MainMenu',Game.MainMenu);
+
+gamevar.state.add('Game',Game.PlayGame);
+
+gamevar.state.add('Lose',Game.LoseScreen);
+
+gamevar.state.add('Win',Game.WinScreen);
+
+gamevar.state.start('Load');
+
+};
+
+</script>
+
+</body>
+</html>
