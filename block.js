@@ -22,7 +22,7 @@ Block = function(game,x,y,type,color,scale){
 
 };
 
-var md = width/2;
+var md = (width * this.scale ) / 2;
 
 Block.prototype = {
 
